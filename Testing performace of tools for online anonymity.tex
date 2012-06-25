@@ -98,18 +98,37 @@ Below is an outline of the software tools that I've used to analysis the tools f
 \subsection{Firefox browser}
 The browser that I am using is Mozilla Firefox 13.0 (for Ubuntu canonical 1.0). I've choosen to use this browser over Google Chrome as some people desire anonymity from Google so use of there browser may complicate the issue. I will be considering a range of firefox addons which aim to improve anonymity. There are also some firefox setting tweeks which can aid in protecting an individuals identity.
 
+\subsubsection{Building my own Firefox Add-on}
+
+%http://lifehacker.com/264490/how-to-build-a-firefox-extension
+
+Later in this investigation, I hope to test how the anonynity tools that I've investigated can be integrated with Signposts. A useful why to test this is to build my own Firefox Add-on. This will be particularly useful if it is possible to biuld a firefox Add-on that I can then go onto use to control other Firefox Add-ons such as NoScript or the Project Tor Button.
+
+% Plan to work through https://developer.mozilla.org/en/XUL_School
+
 \subsection{Traceroute}
 %TODO coplete info on Traceroute
 \subsection{Wireshark}
 %TODO complete info on Wireshark
 \subsection{Iperf}
-The suggest tool for my investigations is iperf. Iperf is a netwrok testing tool that measures stats on the netwrok performace of TCP and UDP data streams.  When testing UDP capcity Iperf allows the user to specify the datagram size so I will need to decide a suitable size. 
+The suggest tool for my investigations is iperf. Iperf is a netwrok testing tool that measures stats on the network performace of TCP and UDP data streams.  When testing UDP capacity Iperf allows the user to specify the datagram size so I will need to decide a suitable size. 
 
 Jperf is a GUI for Iperf which is written in Java but I have choosen not to use this as I will be trying to automate my tests using a unix script and I hope to improve my knowledge of unix commend line.
 
-Iperf has a client and server functionality to measure network performance between two ends either unidiectionally or bi-directionally. This means I need two computers to run my tests. One will be my desktop in my college room and the other will be my laptop in the computer labs. I intend to make the following measurements
+Iperf has a client and server functionality to measure network performance between two ends either unidiectionally or bi-directionally. This means I need two computers to run my tests. One will be my desktop in my college room and the other will be my laptop in the computer labs. I intend to make the following measurements:
+\begin{itemize}
+\item Latency - measured using ping
+\item Jitter - measured using Iperf UDP
+\item Datagram Loss - measured using Iperf UDP
+\item Bandwidth - measured using Iperf TCP
+\end{itemize}
+
+But Tor (with I am currently testing) only supports TCP so it will not support ping or UDP
+%stuck here ??
+
+
 \subsection{Dig and Host}
-%TODO complete info on Dig and host
+dig and host are DNS lookup utilities that you can call from the Unix terminal
 \subsection{Octave}
 %TODO complete info on Octave
 
@@ -309,3 +328,5 @@ To set up a CA and generate the keys and certificates
 %TODO finish references collection and find some relavent papers
 
 \end{document}
+
+%andriod development  http://www.javacodegeeks.com/2011/06/android-game-development-tutorials.html

@@ -38,11 +38,11 @@ I will evaluate a range of tools for online anonymity aganist the following crit
 
 \section{Hardware} 
 
-\subsection{Laptop (typically as a client) running Ubuntu 12.04}
-System Specs
+\subsection{Laptop}
+System Information
 \begin{itemize}
 \item OS: Ubuntu 12.04 LTS
-\item Memory: 3.7. GiB
+\item Memory: 3.7 GiB
 \item Intel Core i3
 \item 64 bit
 \item Disk: 25.9 GB
@@ -51,14 +51,29 @@ System Specs
 % broken touchpad also
 \end{itemize}
 
-\subsection{Desktop (typically as a server) running Ubuntu 12.04}
-%TODO add desktop specs
+\subsection{Desktop}
+System Information
+\begin{itemize}
+\item OS: Ubuntu 12.04 LTS
+\item Memory: 3.9 GiB
+\item Intel Core i5
+\item 32 bit
+%not sure why this is 32 bit but it is
+\item Disk: 238.1 GB
+\end{itemize}
 
-\subsection{Raspberry pi}
-%TODO add raspberry pi specs inparticular thoughs about current disto
+\subsection{Raspberry Pi}
+I may make use of the raspberry pi in my investigations. The System Information is
+\begin{itemize}
+\item Model B
+\item OS: Debian Wheezy
+\item Memory: 256 MB
+\item 32 bit
+\item SD Card: 4 GB
+\end{itemize}
+%current issue is the lack of a conpatable wireless adaptor so networking testing is limited to ethernet
 
 \subsection{Andriod Phone} 
-%TODO tidy up this section on the andriod phone
 The andriod phone that I am choosing to work with, is as follows:
 \begin{itemize}
 \item Model: HTC Dream
@@ -67,13 +82,7 @@ The andriod phone that I am choosing to work with, is as follows:
 \item Biuld Number FRG83
 \end{itemize}
 
-In order to work with this phone I've install the SDK starter package and the ADT Plugin for Eclipse. Then from Eclipse, I've used the Android SDK Manager to get the SDK platform, samples and API for Android 2.2 (the version on the phone)
 
-Next, I created an Android Virtual Device (AVD) called $my_HTC_Dream$ and follow the basic helloWorld tutorial. To get my apps onto the phone, i put the phone into USB Debugging mode and add the udev rule as follows
-		sudo gedit /etc/udev/rules.d/51-android.rules 
-Then into that file add SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", MODE="0666", GROUP="plugdev"  and execute chmod a+r /etc/udev/rules.d/51-android.rules
-
-Before contiuning to look at loading my own applications on to andriod, I am going to take a look at applications avaliable on the andriod platform for anonymity online
 
 \section{Avaliable Networks}
 %TODO add some information on the avaliable networks, e.g. sample bandwidth and reliablity 

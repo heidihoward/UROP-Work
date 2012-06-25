@@ -4,16 +4,20 @@
 \author{Heidi Howard}
 \date{\today}
 \maketitle
+\tableofcontents
 
 \section{Aims and Objectives}
 
 \subsection{Types of Anonymity}
+%TODO Find the name for these different types of anonymity and oter types like those from security notes e.g. linkability and pseduo-anominity 
 The two types of anonymity that I will be considering are:
-
-- hide identify for web hosts including your locations, IP address, browsing habits, MAC address, facebook username etc..
-- hide browsing from man-in-the-middle dispute use of unsecure Wi-Fi e.g. in cafes 
+\begin{itemize}
+\item hide identify for web hosts including your locations, IP address, browsing habits, MAC address, facebook username etc..
+\item browsing from man-in-the-middle dispute use of unsecure Wi-Fi e.g. in cafes 
+\end{itemize}
 
 \subsection{Difference between Anonymity and Security}
+%TODO Write this up, potentially talk to anil about it, Tor provides anonymity but not security whereas OpenVPN provides security but not anonymity
 
 \subsection{Evaluation Criteria for Anonymity Tools}
 I will evaluate a range of tools for online anonymity aganist the following criteria:
@@ -24,7 +28,7 @@ I will evaluate a range of tools for online anonymity aganist the following crit
 	5. Side Effects (positive + negative)
 
 
-\section{Scope}
+\subsection{Scope}
 \begin{itemize}
 \item Consider a range of tools from simple tools such as broswer plugins to more complex solution such as VPN's
 \item Only consider open source tools that are avaliable on linux or andriod (don't need to consider mac or windows)
@@ -35,56 +39,256 @@ I will evaluate a range of tools for online anonymity aganist the following crit
 \section{Hardware} 
 
 \subsection{Laptop (typically as a client) running Ubuntu 12.04}
+System Specs
+\begin{itemize}
+\item OS: Ubuntu 12.04 LTS
+\item Memory: 3.7. GiB
+\item Intel Core i3
+\item 64 bit
+\item Disk: 25.9 GB
+% the lack of disk shape is a serious problem with my laptop that needs to be dealt with at sometime, currently around 4 GB of disk space in Ubuntu partition, plenty of space in windows partition
+% this can be resolved by running ubuntu of a live CD/USB and using Gparted to reduce windows partitions and growth ubuntu partition
+% broken touchpad also
+\end{itemize}
+
 \subsection{Desktop (typically as a server) running Ubuntu 12.04}
+%TODO add desktop specs
+
 \subsection{Raspberry pi}
+%TODO add raspberry pi specs inparticular thoughs about current disto
+
 \subsection{Andriod Phone} 
+%TODO tidy up this section on the andriod phone
+The andriod phone that I am choosing to work with, is as follows:
+\begin{itemize}
+\item Model: HTC Dream
+\item Android Version: 2.2.1
+\item Mod Version CyanogenMod-6.1.1-DS
+\item Biuld Number FRG83
+\end{itemize}
+
+In order to work with this phone I've install the SDK starter package and the ADT Plugin for Eclipse. Then from Eclipse, I've used the Android SDK Manager to get the SDK platform, samples and API for Android 2.2 (the version on the phone)
+
+Next, I created an Android Virtual Device (AVD) called $my_HTC_Dream$ and follow the basic helloWorld tutorial. To get my apps onto the phone, i put the phone into USB Debugging mode and add the udev rule as follows
+		sudo gedit /etc/udev/rules.d/51-android.rules 
+Then into that file add SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", MODE="0666", GROUP="plugdev"  and execute chmod a+r /etc/udev/rules.d/51-android.rules
+
+Before contiuning to look at loading my own applications on to andriod, I am going to take a look at applications avaliable on the andriod platform for anonymity online
 
 \section{Avaliable Networks}
-
+%TODO add some information on the avaliable networks, e.g. sample bandwidth and reliablity 
 \subsection{College ethenet (possible issues with the firewall/NAT) (typically for the server)}
 \subsection{wgb Wi-Fi (typically for the client)}
 \subsection{Lapwing (typically for the client)}
-\subsection{Eduroam (typically for the cleint)}
+\subsection{Eduroam (typically git push -u origin masfor the cleint)}
 \subsection{3G (possiblity for the android phone)}
+%this is unlikely to be used due to cost implications
 
-\section{Software/ Unix Command line Tools}
+\section{Software/Tools Used Investigations}
+Below is an outline of the software tools that I've used to analysis the tools for anonymity. Like the tools for anonymity, all tools listed here are open source and avalible on Linux or Android.
+\subsection{Firefox browser}
+The browser that I am using is Mozilla Firefox 13.0 (for Ubuntu canonical 1.0). I've choosen to use this browser over Google Chrome as some people desire anonymity from Google so use of there browser may complicate the issue. I will be considering a range of firefox addons which aim to improve anonymity. There are also some firefox setting tweeks which can aid in protecting an individuals identity.
 
-\subsection{Tor browser bundle (for qualative analysis)}
-\subsection{Tor in commond line (for quantative analysis)}
-\subsection{Firefox browser + plugins}
-\subsection{Traceroute ??}
-\subsection{Wireshark ??}
-\subsection{iperf}
-\subsection{openVPN}
-\subsection{Privoxy}
-\subsection{dig / host}
-\subsection{Octave (to analysis quantative results)}
-\subsection{Hamachi}
-\subsection{Freedom Box}
-\subsection{Orbot (Tor for andoid)}
+\subsection{Traceroute}
+%TODO coplete info on Traceroute
+\subsection{Wireshark}
+%TODO complete info on Wireshark
+\subsection{Iperf}
+The suggest tool for my investigations is iperf. Iperf is a netwrok testing tool that measures stats on the netwrok performace of TCP and UDP data streams.  When testing UDP capcity Iperf allows the user to specify the datagram size so I will need to decide a suitable size. 
+
+Jperf is a GUI for Iperf which is written in Java but I have choosen not to use this as I will be trying to automate my tests using a unix script and I hope to improve my knowledge of unix commend line.
+
+Iperf has a client and server functionality to measure network performance between two ends either unidiectionally or bi-directionally. This means I need two computers to run my tests. One will be my desktop in my college room and the other will be my laptop in the computer labs. I intend to make the following measurements
+\subsection{Dig and Host}
+%TODO complete info on Dig and host
+\subsection{Octave}
+%TODO complete info on Octave
+
 \subsection{CyanogenMod}
-\subsection{odine ?}
-- 
-\section{Tools to Test} 
-- 
-\subsection{Tor}
-\subsection{Privoxy}
-\subsection{FreedomBox}
-\subsection{Firefox Addons}
+%TODO complete info on CyanogenMod
 
-etc..
+\subsection{Iodine ?}
+%TODO complete info on iodine
 
-\section{Qualative Results}
+
+\section{Project Tor (Qualative Anaylsis)}
+
+%what is TOR and how does it work ?
+TOR, the ancroym for The Onion Rounter is a system designed to provide individuals with anonmity online. Tor works by routing internet traffic through a network of server to conceal the user's location and usage information. 
+%installation focusing on browser bundle
+% possiblity try tor on android
+I am going to focus my investigations on the Tor Browser Bundle. The Browser bundle lets you run Tor directly of a USB flash drive without installation and includes a pre-configured firefox browser which further aims to protect the users identify by:
 \begin{itemize}
-\item Description on tools against the evalation criteria 
-\item Description of install process via command line
-\item Reasearch into the level of anonymity provided
+\item ensuring that the browser to properly configured to send their traffic through Tor
+\item blocking browser plugins as they can be manipulated to reveal your IP address 
+%how can they be manipulated to reveal IP address
+%case study: you can't use youtube with out plugins but there is an opt in trial of HTML5 which can potential surcomvent this www.youtube.com/html5
+\item uses HTTPS Everywhere to force HTTPS encryption on major websites that support it
+%case study: HTTPS everywhere is a Firefox/Chrome extension produced by the electronic frontier foundation can be found at www.eff.org/https-everywhere
+%case study: use of firefox mean that it includes the Site Identify Button support.mozilla.org/en-US/kb/how-do-i-tell-if-my-connection-is-secure
+\item warning the user before allowing them to open documents that are handled by external applications as this can reveal there non-Tor IP address
+%case study: may be try out tails tails.boum.org
+%case study: maybe look at why your should use bittorrent over tor blog.torproject.org/blog/bittorrent-over-tor-isnt-good-idea
+
+%case study: using a Tor bridge relay rather than connecting directly to public tor network
+%case study: other tor related projects www.torproject.org/getinvolved/volunteer.html.en#Documentation
+\end{itemize}
+
+The TOR browser bundle includes Vidalia, a GUI for Tor that allows users start and stop tor, view a graphical representation of the current TOR network, switch to a new IP address, set up a relay and edit Tor's settings.
+
+The homepage for the browser check.torproject.org confurms to the user that Tor is successfully working and returns to the user the current IP address that there network traffic appears to be coming from.
+
+Looking at TOR from an alternative pospective, that of an adversary. An adversary may aim to do the following:
+\begin{itemize}
+\item Bypassing Tor - get the user to connect directly to an IP of an adversary's choosing
+\item Correlation of Tor and Non-Tor Activity - detecting what a tor user did then not using tor
+\item Identifying Tor Users - identifying the indivduals that use Tor
+\item History Disclosure - the ability to quiery to see if an individual has visited particular sites previously
+\item Identifying location - using information such as timezone to determine a individuals geographical location
+\item Miscellaneous anonymity set reduction - Link activity to an particular individual using obscure information
+\item History records / On-disk information - with physical access to a machine using caching and historical records to identify previous activity
+\end{itemize}
+
+An adversary can locate themselves where they have the best chance to attack, this could include as an exit node, upstream router, ad servers, hosting malicious websites, ISP or gain physical access. The Tor browser aims to protect against this forms of attack 
+%much more could be added here, source is largely www.torproject.org/projects/torbrowser/design/
+
+%useablilty 
+%issues with TOR
+Once of the issues what I quickly found with Tor was the speed of my internet connection compared to when I was not using Tor. I therefore coolected some data on the speed of Tor vs Non Tor connections and looked into whether the speeds achieved were sufficient to use Tor for everyday browsing.  
+
+To add context to the speeds which I am achieving I could investigate what speed are sufficient for different internet activities, but just because a speed is sufficient it don't mean that it means the users expectations. Instead I will consider the figures in the context of the UK's average broadband speeds. I will be using the data provided by "Wi-Fi in the Home - A Study into the Effect of the 'air Mile' on Consumer Boardband Performance" produced by Epitiro in 2011. Epitiro found that the average UK Wi-Fi download speed was 6.1 Mbps
+
+
+\begin{table}[tbp]
+\centering
+\begin{tabular}{|c c|c c|}
+	\hline
+	\multicolumn{2}{|c|}{Tor} & \multicolumn{2}{|c|}{Non-Tor} \\
+	\hline
+	Download & Upload & Download & Upload \\
+	\hline
+	1282 & 697 & 9824 & 9170 \\
+	1373 & 1316 & 9849 & 8200 \\
+	1517 & 1807 & 8508 & 8273 \\
+	\hline
+	1782 & 483 & 2454 & 311 \\
+	1455 & 497 & 2320 & 453 \\
+	1349 & 458 & 1781 & 621 \\
+	\hline
+	
+	
+
+\end{tabular}
+\caption{Comparing connection speeds acheived using Tor verse those achieved when not using Tor, all measurements given in Kbps}
+\label{tab:my table on Tor connection speeds}
+\end{table}
+
+
+
+\section{Tor (Quantative Anaylsis)}
+
+\section{Planning}
+To begin with I'm collect data on the performace of Tor and the normal network performace for comparision. Later I intend to extend this to other solutions to analoy online. For now I am going to run all test on ubuntu on my laptop but later this can be extended to other platforms like android. 
+
+THe plan for my initial tests is as follows:
+\begin{itemize}
+\item Each test will be run over UDP and then TCP
+\item Each test will run for 24 hrs 
+\item Each test will be run over Tor and without-Tor as a control
+\item The reley on Tor needs to be regularly changed
+\item The first network that I will run the test on is Edurom at WGB
+
 \end{itemize}
 
 
-\section{Quantative Results}
+\section{Privoxy with Hamachi (Qualative Anaylsis)}
+Privoxy is a heavy costomizable non-caching web proxy. Privoxy can be used to conjection with Tor. Privoxy aims to allow user more fine-grained control over thier internet experience. Privoxy acts as an middleman between the browser and webservers. Privoxy requests objects on behalf of the browser
+
+% Privoxy cor features include ad blocking, cookie management, ...
+
+\subsection{Introduction}
+To enable me to encrypt my web traffic when using public Wi-Fi regardless of wheather a website supports HTTPS, to prevent attacks like Firesheep. I am going to set up an encrypted web proxy between my desktop in my college room and my laptop in a coffee shop. 
+
+The desktop in my room (the proxy) acts as a middleman between my laptop (the client) and the world wide web. This means that internet requests go from the client to the proxy and the proxy then executes that on the clients behalf and returns the result to the client. 
+
+The encryption is set up between the client and the server, this means that the traffic from the cleint can't be intercepted by other users on the public Wi-Fi in the coffee shop. The encryption only takes place been the client and the server, not between the server and the world wide web. But this is not important since the connection from the server to the world wide web is more secure than that directly from the client using public Wi-Fi in a coffee shop
+
+\subsection{The Plan}
+
+For this experiment I will be making use the follow software:
 \begin{itemize}
-\item Data on network performance of tools includes features such as bandwidth, latency, packet loss and jitter
+\item Hamachi - a cross-platform VPN server the gives encrypted access to my server from my client
+\item Privoxy - A web proxy (as tested last week)
 \end{itemize}
+
+In over to do this experiment, I will need to IP address of my server. The server is a desktop in my college room and my college uses a NAT. So how can get the servers IP address if its behind a NAT ?
+
+The university runs its own authorative DNS server, this maps domain names to each individuals computers. The domain name for my server is therefore:
+
+hh360.pem.private.cam.ac.uk
+
+I can use this domain name to refer to my server so that even if the IP address changes, I will still be able to access the server.
+
+%im following the instruction on http://lifehacker.com/5763170/how-to-secure-and-encrypt-your-web-browsing-on-public-networks-with-hamachi-and-privoxy
+% an alternative method is http://lifehacker.com/237227/geek-to-live--encrypt-your-web-browsing-session-with-an-ssh-socks-proxy
+
+Now that I have the information that I need, I will:
+\begin{itemize}
+\item Install Hamachi on my server
+\item Set a new private network
+\item Install Hamachi on my client
+\item Get IP address of client (for use in testing)
+\item Join the newly created network
+\item Install Privoxy on my server
+\item Edit config.txt by changing listen-address to IP address created by Hamachi
+\item edit firefox preference to using the Hamachi-powered server as a HTTP proxy on port 8118
+\item Go to http://config.privoxy.org/ to check that privoxy
+\item Using dig or host to perform a DNS query for the server IP address
+\item Go to WhatIsMyIP.com and the IP address should be that of the server
+\item Run a couple of quick speed tests whilst using the proxy
+\item Turn off the proxy etain firefox, and go to WhatIsMyIP.com to get the IP address of the client again (compare to that found earlier)
+\item Now that the proxy is off, run a couple of quick speed tests 
+\item From the client, using nmap to check port scan the servereta
+\end{itemize}
+
+\subsection{Implementation}
+
+\subsection{Conclusions and Results}
+% how would you do this without the uni author DNS servers
+
+
+\section{Using Dreamplug as a FreedomBox (Qualative Anaylsis)}
+
+%using dreamplug as hardware
+Globalscale's Dreamplug is an classic example of a Plug Computer, it sports a 1.2GHz ARM processor, 512MB of RAM, 1GB Storage as well as 2 ethernet port, SD card slot and Wi-Fi all running on 5V DC power. A plug computer is a small form factor computer often used as a server. Dreamplug has typical features of a Plug computer such as:
+
+\begin{itemize}
+\item low power consumption
+\item small form factor
+\item no video card
+\item good connectivity
+\end{itemize}
+
+%what is a freedomBox 
+Plug computer such as Dreamplug can be used as "FreedomBox". FreedomBoxes are personal home servers that aims to free individuals from centralised systems such as popular social networking sites and email servers and move forward to more distributed systems putting individuals in control of there own data and how its transmitted through the packaging of opensource software 
+
+%potential future with raspberry piwww.torproject.org/projects/torbrowser/design/
+In the future, new hardware such as the raspberry pi could be used as a freedom box, with a notably lower unit cost than hardware such as the Dreamplug.
+
+\section{Firefox Addons (Qualative Anaylsis)}
+
+\section{OpenVPN (Qualative Anaylsis)}
+Firstly I'm going to look at using openVPN to set up a VPN between my android phone and laptop. To do this I will install openVPN on my laptop (as the server) and connect my andriod phone to the VPN (as the client). 
+
+OpenVPN can be downloaded straight from ubuntu repositories. Next I need set up a public-key infrastructure (PKI) which will allow my cleint and server to identify and authontiate each other. The PKI conists of a public and private key pair for the server and another pair for the cleint and a CA cerificate and key wich is used to sign the server and cleints public and private key pair. 
+
+To set up a CA and generate the keys and certificates
+%stopped here due to technical problems with openVPN on andriod, gunna wait until i have an other laptop to use as a client
+
+
+\section{References}
+%http://www.painless-security.com/blog/2011/06/27/dream-plug
+%http://www.youtube.com/watch?feature=player_embedded&v=8dMrI74Ti4M#!
+%www.torproject.org/projects/torbrowser/design/
 
 \end{document}

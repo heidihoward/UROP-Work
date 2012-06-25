@@ -1,0 +1,74 @@
+Testing performance of tools for online anonymity
+
+Aims & Objectives
+
+The two types of anonyity that I will be considering are:
+
+- hide identify for web hosts including your locations, IP address, browsing habits, MAC address, facebook username etc..
+- hide browsing from man-in-the-middle dispute use of unsecure Wi-Fi e.g. in cafes 
+
+I will evaluate a range of tools for online anonymity aganist the following criteria:
+	1. Ease of install
+	2. Impact on network performance
+	3. Degree to which aims are achieved 
+	4. Useability
+	5. Side Effects (positive + negative)
+
+Scope
+
+- Consider a range of tools from simple tools such as broswer plugins to more complex solution such as VPN's
+- Only consider open source tools that are avaliable on linux or andriod (don't need to consider mac or windows)
+- Only use hardware set out below
+- Only use the networks set out below
+
+Hardware 
+
+- Laptop (typically as a client) running Ubuntu 12.04
+- Desktop (typically as a server) running Ubuntu 12.04 
+- Raspberry pi
+- Andriod Phone 
+
+Avaliable Networks
+
+- College ethenet (possible issues with the firewall/NAT) (typically for the server)
+- wgb Wi-Fi (typically for the client)
+- Lapwing (typically for the client)
+- Eduroam (typically for the cleint)
+- 3G (possiblity for the android phone)
+
+Software/ Unix Command line Tools
+
+- Tor browser bundle (for qualative analysis)
+- Tor in commond line (for quantative analysis)
+- Firefox browser + plugins
+- Traceroute ??
+- Wireshark ??
+- iperf
+- openVPN
+- Privoxy
+- dig / host
+- Octave (to analysis quantative results)
+- Hamachi
+- Freedom Box
+- Orbot (Tor for andoid)
+- CyanogenMod
+- Iodine ?
+
+Qualative Results
+
+- Description on tools against the evalation criteria 
+- Description of install process via command line
+- Reasearch into the level of anonymity provided
+
+Quantative Results
+
+-Data on network performance of tools includes features such as bandwidth, latency, packet loss and jitter
+
+Tools to Test 
+
+- Tor
+- Privoxy
+- FreedomBox
+- Firefox Addons
+
+etc..

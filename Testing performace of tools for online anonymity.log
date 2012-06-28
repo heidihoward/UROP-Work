@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.6.25)  25 JUN 2012 18:42
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.6.8)  28 JUN 2012 16:33
 entering extended mode
  %&-line parsing enabled.
 **"Testing performace of tools for online anonymity.tex"
@@ -43,63 +43,80 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 6.
 
-(./Testing performace of tools for online anonymity.toc
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 2.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 2.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 2.
- [1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+(./Testing performace of tools for online anonymity.toc)
 \tf@toc=\write3
 \openout3 = `"Testing performace of tools for online anonymity.toc"'.
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 15.
+
+Overfull \hbox (56.29536pt too wide) in paragraph at lines 17--18
+[]\OT1/cmr/m/n/12 Anonymity on-line for the "ev-ery-day" user has hithttp://lif
+ehacker.com/237227/geek-
+ []
+
+
+Overfull \hbox (1.20566pt too wide) in paragraph at lines 17--18
+\OT1/cmr/m/n/12 to-live--encrypt-your-web-browsing-session-with-an-ssh-socks-pr
+oxy the head-
+ []
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 23.
 
 (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 15.
- [2]
-Overfull \hbox (2.23112pt too wide) in paragraph at lines 41--41
-[]\OT1/cmr/bx/n/14.4 Laptop (typ-i-cally as a client) run-ning Ubuntu 12.04 
- []
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 23.
 
-[3]
-Overfull \hbox (23.77354pt too wide) in paragraph at lines 72--75
-\OT1/cmr/m/n/12 TEM=="usb", AT-TRid-Ven-dor=="0bb4", MODE="0666", GROUP="plugde
-v"
+Overfull \hbox (25.50633pt too wide) in paragraph at lines 35--36
+[]\OT1/cmr/m/n/12 The def-i-ni-tion of anonymity above makes an im-por-tant dis
+-t-ing-tion. Anonymity
  []
 
 
-Overfull \hbox (29.5829pt too wide) in paragraph at lines 80--80
-[]\OT1/cmr/bx/n/14.4 College ethenet (pos-si-ble is-sues with the fire-wall/NAT
-)
+Overfull \hbox (21.52777pt too wide) in paragraph at lines 40--41
+\OT1/cmr/m/n/12 Before con-tin-ue-ing I think its im-por-tant to make a dis-tin
+c-tion be-tween Anonymity
  []
 
-[4] [5] [6] [7] [8] [9] [10] [11]
-(./Testing performace of tools for online anonymity.aux) ) 
+[2]
+Overfull \hbox (90.49103pt too wide) in paragraph at lines 42--42
+[]\OT1/cmr/bx/n/14.4 Evaluation Cri-te-ria for Anohttp://lifehacker.com/237227/
+geek-
+ []
+
+
+Overfull \hbox (10.10115pt too wide) in paragraph at lines 42--42
+\OT1/cmr/bx/n/14.4 to-live--encrypt-your-web-browsing-session-with-an-
+ []
+
+[3] [4] [5])
+Runaway argument?
+{ \par \subsubsection {Building my own Firefox Add-on} \par \par Late\ETC.
+! File ended while scanning use of \@xdblarg.
+<inserted text> 
+                \par 
+<*> ...rformace of tools for online anonymity.tex"
+                                                  
+I suspect you have forgotten a `}', causing me
+to read past where you wanted me to stop.
+I'll try to recover; but if the error is serious,
+you'd better type `E' or `X' now and fix your file.
+
+! Emergency stop.
+<*> ...rformace of tools for online anonymity.tex"
+                                                  
+*** (job aborted, no legal \end found)
+
+ 
 Here is how much of TeX's memory you used:
- 256 strings out of 495061
- 3332 string characters out of 1182621
+ 238 strings out of 495061
+ 3039 string characters out of 1182622
  51289 words of memory out of 3000000
- 3503 multiletter control sequences out of 15000+50000
- 8808 words of font info for 31 fonts, out of 3000000 for 9000
+ 3492 multiletter control sequences out of 15000+50000
+ 6928 words of font info for 25 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 22i,8n,19p,599b,205s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-tex
-live/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/
-type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-texlive/fonts/type1/publi
-c/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/c
-m/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on "Testing performace of tools for online anonymity.pdf" (11 pa
-ges, 98760 bytes).
-PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 22i,6n,19p,907b,187s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!

@@ -6,37 +6,80 @@
 \maketitle
 \tableofcontents
 
+\begin{abstract}
+The following document is a look back at the ideas and concepts that I've explored for the first 3 weeks of the summer reasearch project. The focus of my reading has been the area of anonymity and security in computer networking. I intend to use this as reference in future to review the technolgolies explored and see if any can be apply in Signposts, a system for enabling end to end connectivity between modern devices on the edge of the internet, seperated by a middleware. I've conducted my reasearch over the last few weeks by finding software that aims to provide users with anonymity online, tested out the software and looked at the thoery behind how the software claims to provide anonymity for the user.
+\end{abstract}
+
+
 \section{Aims and Objectives}
+My overall aim of the first 3 weeks of the project was to gain skills and learn some of the fundemental idea behind the internet and the issues created by the modern internet in the current information age. I begin by exploring why a user would need anonymity online and then I when on to look at how this can be achieved. The context of anonymity that I have considered is that of a typically user in the UK, who does want to be tracked by website as they browse the internet and wants to make secure use of unsecure Wi-FI connections. I've choose not to consider the anonymity that might be required by a individual in a polically suppressed country or a corperation commiting esbonatge.
+
+Anonymity online for the "everyday" user has hit the headlines lately since Google released its new privacy policy and tools such as Collusion highlighted to users how many websites track users across the web. One of the first steps I took was to install Collusion and took a look at which sites I reguarly visited, used cookies to track me across the web. Next I took at look at how anonymity is defined and the criteria against which I intended to evaluate tools for online anonymity.
+
 
 \subsection{Types of Anonymity}
-%TODO Find the name for these different types of anonymity and oter types like those from security notes e.g. linkability and pseduo-anominity 
 The two types of anonymity that I will be considering are:
 \begin{itemize}
 \item hide identify for web hosts including your locations, IP address, browsing habits, MAC address, facebook username etc..
 \item browsing from man-in-the-middle dispute use of unsecure Wi-Fi e.g. in cafes 
 \end{itemize}
 
+\subsection{Terminology}
+
+\begin{itemize}
+\item Anonymity - a subject is not identifiable within a set of subjects
+\item Pseudonymity - use of pseudoyms as identifiers
+\item Unlinkability - inability to distinguish wheather to actions are related or not
+\end{itemize}
+
+The definition of anonymity above makes an important distingtion. Anonymity doesn't nessacary mean that a subject is not indeifiable within a whole population of subject instead it means that the subject is not identifiable within a set of subject. With systems for anonymity such as Tor, the set of subjects is the set of tor users. The larger the set of subjects, the better the anonymity. So the more indivudals that use a typically anonymity system, the better anonymity is provided to each user. 
+
+As the size of the set of subjects is proportional to the anonymity provided, if an individual was attempting to reduce anonymity, they would do so by reducing the size of the set of subjects. For example if I'm a website trying to reduce your anonymity and your an individual attempting to protect your identify by using Tor, I can reduced the set of subjects from all Tor users to all Tor users using the same edition of the same browser as you by recording your browser edition.
+
 \subsection{Difference between Anonymity and Security}
-%TODO Write this up, potentially talk to anil about it, Tor provides anonymity but not security whereas OpenVPN provides security but not anonymity
+Before continueing I think its important to make a distinction between Anonymity and Security. Tor provides anonymity but not security whereas OpenVPN provides security but not anonymity. Security dosenot imply anonymity and vise versa.
 
 \subsection{Evaluation Criteria for Anonymity Tools}
 I will evaluate a range of tools for online anonymity aganist the following criteria:
-	1. Ease of install
-	2. Impact on network performance
-	3. Degree to which aims are achieved 
-	4. Useability
-	5. Side Effects (positive + negative)
-
+\begin{itemize}
+\item	1. Ease of install
+\item	2. Impact on network performance
+\item	3. Degree to which aims are achieved 
+\item	4. Useability
+\item	5. Side Effects (positive + negative)
+\end{itemize}
 
 \subsection{Scope}
 \begin{itemize}
 \item Consider a range of tools from simple tools such as broswer plugins to more complex solution such as VPN's
-\item Only consider open source tools that are avaliable on linux or andriod (don't need to consider mac or windows)
+\item Only consider open source tools that are avaliable on linux. %or andriod (don't need to consider mac or windows)
+%TODO consider if the andriod references should be removed
 \item Only use hardware set out below
 \item Only use the networks set out below
 \end{itemize}
 
+\section{Skills}
+To be of use to Signposts, I need to develop the following skills and understand of the following cocepts, accompianting each skills/concept is how I hope to achieve it
+\begin{itemize}
+\item Unix Commend line - by using command line where possiblie instead of GUI's, learning commend line basics such as changing directory, moving a file/directory, returning current directory, installing applications from the ubuntu repositories, switching to sudo, installing from tar ball, extracting from a tar file, using ssh, git basics, getting help/manuals, pipes, grep, list processes, list files, changing file premissions, creating directories/empty files, removing files/directories, removing applications installed from ubuntu repositories
+\item git and Github - the difference between stages and commited files, how to use git config to change username, email, text editor and difference tool, get help with git, initializing a new repository, cloning an existing repository, checking the status of a file in the working directory, tracking new files, staging files, ignoring files, committing files, removing files, moving files, viewing commit history, adding github remotes, showing remotes, pulling and pushing to remotes
+\item How DNS works - using dig and host, watching DNS queries on WireShark, difference between local DNS server, root DNS server, Top-level domain server, Authoritative DNS server, difference between iterative and recusive queries, DNS caching, Dynamic DNS
+\item Types of DNS records - type A, type NS, type CNAME and type MX, DNS message format, 
+\item Difference between DNS and DNSSEC - authentication via a chain of trust, new record types added to DNS
+% \item Analysis experimental data
+\item Proxies and VPNs - how proxies provide security, role of web proxies, reverse proxies and forward proxies, caching proxy, DNS proxy, setting up an encryped proxy 
+\item SSH
+\item Capabilities of Firefox Addons/Extensions
+\item Andriod Platform
+\item NATs and workarounds
+\item LaTeX
+\item SSL 
+\item Packet Struture 
+\end{itemize}
+
+
 \section{Hardware} 
+Below is a description of the hardware that I used over the course of the last few weeks. Initally I planed to make extensive use of a raspberry pi as an always on server but due to the additional complexity I had to install Ubuntu on my desktop and then intended to use this as a server. This allowed me to use the same OS for both the client and server but I then had to adjust my plans due to complexity introduced by college firewalls and NAT boxes so I then desiced to make use of a virtual machine on the Amazon compute cloud, this provided me with a public DNS name and a public IP, which make it much easier to address the machine. I used amazon's web interface to start and stop the machine and then I controlled the the machine remotely by SSH, this allowed me to have access to two machines at once so I can send communication between them
 
 \subsection{Laptop}
 System Information
@@ -62,47 +105,52 @@ System Information
 \item Disk: 238.1 GB
 \end{itemize}
 
-\subsection{Raspberry Pi}
-I may make use of the raspberry pi in my investigations. The System Information is
-\begin{itemize}
-\item Model B
-\item OS: Debian Wheezy
-\item Memory: 256 MB
-\item 32 bit
-\item SD Card: 4 GB
-\end{itemize}
+% \subsection{Raspberry Pi}
+% I may make use of the raspberry pi in my investigations. The System Information is
+% \begin{itemize}
+% \item Model B
+% \item OS: Debian Wheezy
+% \item Memory: 256 MB
+% \item 32 bit
+% \item SD Card: 4 GB
+% \end{itemize}
 %current issue is the lack of a conpatable wireless adaptor so networking testing is limited to ethernet
 
-\subsection{Andriod Phone} 
-The andriod phone that I am choosing to work with, is as follows:
-\begin{itemize}
-\item Model: HTC Dream
-\item Android Version: 2.2.1
-\item Mod Version CyanogenMod-6.1.1-DS
-\item Biuld Number FRG83
-\end{itemize}
+% \subsection{Andriod Phone} 
+% The andriod phone that I am choosing to work with, is as follows:
+% \begin{itemize}
+% \item Model: HTC Dream
+% \item Android Version: 2.2.1
+% \item Mod Version CyanogenMod-6.1.1-DS
+% \item Biuld Number FRG83
+% \end{itemize}
 
 
 
-\section{Avaliable Networks}
-%TODO add some information on the avaliable networks, e.g. sample bandwidth and reliablity 
-\subsection{College ethenet (possible issues with the firewall/NAT) (typically for the server)}
-\subsection{wgb Wi-Fi (typically for the client)}
-\subsection{Lapwing (typically for the client)}
-\subsection{Eduroam (typically git push -u origin masfor the cleint)}
-\subsection{3G (possiblity for the android phone)}
+%\section{Avaliable Networks}
+%Below are the details of the avalible networks 
+
+%TO DO add some information on the avaliable networks, e.g. sample bandwidth and reliablity 
+%\subsection{College ethenet (possible issues with the firewall/NAT) (typically for the server)}
+%\subsection{wgb Wi-Fi (typically for the client)}
+%\subsection{Lapwing (typically for the client)}
+%\subsection{Eduroam (typically for the cleint)}
+% \subsection{3G (possiblity for the android phone)}
 %this is unlikely to be used due to cost implications
 
 \section{Software/Tools Used Investigations}
-Below is an outline of the software tools that I've used to analysis the tools for anonymity. Like the tools for anonymity, all tools listed here are open source and avalible on Linux or Android.
+Below is an outline of the software tools that I've used to analysis the tools for anonymity. Like the tools for anonymity, all tools listed here are open source and avalible on Linux. %or Android.
+
 \subsection{Firefox browser}
 The browser that I am using is Mozilla Firefox 13.0 (for Ubuntu canonical 1.0). I've choosen to use this browser over Google Chrome as some people desire anonymity from Google so use of there browser may complicate the issue. I will be considering a range of firefox addons which aim to improve anonymity. There are also some firefox setting tweeks which can aid in protecting an individuals identity.
+
+\subsection{
 
 \subsubsection{Building my own Firefox Add-on}
 
 %http://lifehacker.com/264490/how-to-build-a-firefox-extension
 
-Later in this investigation, I hope to test how the anonynity tools that I've investigated can be integrated with Signposts. A useful why to test this is to build my own Firefox Add-on. This will be particularly useful if it is possible to biuld a firefox Add-on that I can then go onto use to control other Firefox Add-ons such as NoScript or the Project Tor Button.
+Later on, I hope to test how the anonynity tools that I've investigated can be integrated with Signposts. A useful why to test this is to build my own Firefox Add-on. This will be particularly useful if it is possible to biuld a firefox Add-on that I can then go onto use to control other Firefox Add-ons such as NoScript or the Project Tor Button.
 
 % Plan to work through https://developer.mozilla.org/en/XUL_School
 
@@ -321,12 +369,19 @@ To set up a CA and generate the keys and certificates
 %stopped here due to technical problems with openVPN on andriod, gunna wait until i have an other laptop to use as a client
 %TODO finish this section here 
 
-\section{References}
+\begin{thebibliography}
+
+\bibitem{collusion}
+Collusion Firefox Addon,  www.mozilla.org/en-US/collusion/
+
 %http://www.painless-security.com/blog/2011/06/27/dream-plug
 %http://www.youtube.com/watch?feature=player_embedded&v=8dMrI74Ti4M#!
 %www.torproject.org/projects/torbrowser/design/
 %TODO finish references collection and find some relavent papers
 
-\end{document}
+\end{thebibliography}
 
 %andriod development  http://www.javacodegeeks.com/2011/06/android-game-development-tutorials.html
+\end{document}
+
+
